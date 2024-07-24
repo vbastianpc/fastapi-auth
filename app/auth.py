@@ -1,3 +1,4 @@
+import os
 from typing import Annotated
 from datetime import datetime, timedelta, timezone
 
@@ -6,12 +7,15 @@ from jwt.exceptions import InvalidTokenError
 from fastapi.security import OAuth2PasswordBearer, SecurityScopes
 from fastapi import Depends, HTTPException, status, Security
 from sqlalchemy.orm import Session
+from dotenv import load_dotenv
 
 from . import crud, schemas
 from .database import get_db
 
+load_dotenv()
 
-SECRET_KEY = "4149bbb73c778e2892be9d343988adb3ffa45abd461951b69a99be7f44868db6"
+SECRET_KEY = os.environ["SECRET_KEY"]
+print(SECRET_KEY)
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
