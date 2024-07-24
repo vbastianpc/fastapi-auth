@@ -1,0 +1,7 @@
+fastapi>=0.111.0,<0.112.0
+pydantic-extra-types==2.9.0
+pydantic==2.8.0
+bcrypt==4.1.3
+PyJWT==2.8.0
+SQLAlchemy==2.0.31
+uvicorn==0.30.1
